@@ -27,3 +27,5 @@ deploy:
     password:
       secure: YkrnXXnn7bWAjVzHaFqP2A==
     ntlm: true
+    on:
+      configuration: release
