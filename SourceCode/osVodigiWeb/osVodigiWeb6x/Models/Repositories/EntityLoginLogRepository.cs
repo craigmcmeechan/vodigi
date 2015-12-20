@@ -1,5 +1,6 @@
+﻿
+/* ----------------------------------------------------------------------------------------
     Vodigi - Open Source Interactive Digital Signage
-
     Copyright (C) 2005-2013  JMC Publications, LLC
 
     This program is free software: you can redistribute it and/or modify
@@ -14,6 +15,24 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+---------------------------------------------------------------------------------------- */
 
+namespace osVodigiWeb6x.Models
+{
+    public class EntityLoginLogRepository : ILoginLogRepository
+    {
+        private VodigiLogsContext db = new VodigiLogsContext();
 
+        public void CreateLoginLog(LoginLog loginlog)
+        {
+            db.LoginLogs.Add(loginlog);
+            db.SaveChanges();
+        }
 
+        public int SaveChanges()
+        {
+            return db.SaveChanges();
+        }
+
+    }
+}

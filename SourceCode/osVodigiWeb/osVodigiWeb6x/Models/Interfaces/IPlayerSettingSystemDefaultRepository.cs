@@ -1,5 +1,5 @@
+﻿/* ----------------------------------------------------------------------------------------
     Vodigi - Open Source Interactive Digital Signage
-
     Copyright (C) 2005-2013  JMC Publications, LLC
 
     This program is free software: you can redistribute it and/or modify
@@ -14,6 +14,19 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+---------------------------------------------------------------------------------------- */
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-
+namespace osVodigiWeb6x.Models
+{
+    public interface IPlayerSettingSystemDefaultRepository
+    {
+        IEnumerable<PlayerSettingSystemDefault> GetAllPlayerSettingSystemDefaults();
+        PlayerSettingSystemDefault GetByPlayerSettingSystemDefaultID(int playersettingsystemdefaultid);
+        PlayerSettingSystemDefault GetByPlayerSettingName(string playersettingname);
+    }
+}
