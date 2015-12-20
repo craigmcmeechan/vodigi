@@ -1,0 +1,29 @@
+version: 6.0.1.{build}
+
+branches:
+  only:
+    - master
+    - production
+
+configuration:
+  - Debug
+  - Release
+
+build:
+  parallel: true
+  project: osVodigi.sln
+  publish_wap: true
+  verbosity: normal
+
+before_build:
+  nuget restore osVodigi.sln
+
+
+deploy:
+  - provider: WebDeploy
+    server: 52.10.134.109
+    website: Default Web Site/vodigi
+    username: Administrator
+    password:
+      secure: YkrnXXnn7bWAjVzHaFqP2A==
+    ntlm: true
