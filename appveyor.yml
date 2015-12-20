@@ -16,8 +16,7 @@ build:
   verbosity: normal
 
 before_build:
-  nuget restore osVodigi.sln
-
+  nuget restore osVodigi.sln -DisableParallelProcessing
 
 deploy:
   - provider: WebDeploy
